@@ -56,4 +56,4 @@ class GraphBuilder:
         )
 
     def __date(self, timestamp):
-        return datetime.fromtimestamp(int(timestamp) / 1e3).strftime('%Y-%m-%d')
+        return datetime.fromtimestamp(int(timestamp) / 1e3).strftime('%Y-%m-%d %H:%M')
