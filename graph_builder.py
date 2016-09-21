@@ -21,7 +21,7 @@ class GraphBuilder:
 
         items = sorted(self.raw.items())
         for timestamp, stats in items:
-            if (timestamps):
+            if timestamps:
                 x.append(timestamp)
             else:
                 x.append(self.__date(timestamp))
@@ -37,7 +37,7 @@ class GraphBuilder:
         annotations = []
 
         for item in coords:
-            report_html = '.lastFinished' + self.dirs_path[2:-1] + item[0] + '/index.html'
+            report_html = self.dirs_path + '-' + item[0] + '/index.html'
             annotations.append(
                 dict(
                     x=self.__date(item[0]),

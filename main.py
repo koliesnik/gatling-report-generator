@@ -5,7 +5,7 @@ from graph_builder import GraphBuilder
 def main():
     parser = GatlingParser()
     data = parser.get_data()
-    gb = GraphBuilder(data, parser.dirs_path())
+    gb = GraphBuilder(data, parser.artifacts_dir() + parser.simulation_report_dir)
 
     gb.export('general-report.html')
 

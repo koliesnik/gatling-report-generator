@@ -9,6 +9,12 @@ class GatlingParser:
     def __init__(self):
         self.gatling_dir = sys.argv[1]
         self.simulation_report_dir = sys.argv[2]
+
+        self.teamcity_host = sys.argv[3]
+        self.teamcity_build_type = sys.argv[4]
+        self.teamcity_build = sys.argv[5]
+        self.teamcity_build_artifacts = sys.argv[6]
+
         self.__parse_global_stats()
 
     def __parse_global_stats(self):
@@ -32,3 +38,7 @@ class GatlingParser:
 
     def get_data(self):
         return self.__data
+
+    def artifacts_dir(self):
+        return self.teamcity_host + '/repository/download/' + self.teamcity_build_type + '/' + self.teamcity_build \
+               + '/' + self.teamcity_build_artifacts + '/'
