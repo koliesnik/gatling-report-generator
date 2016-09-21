@@ -37,7 +37,7 @@ class GraphBuilder:
         annotations = []
 
         for item in coords:
-            report_html = self.dirs_path[:-1] + item[0] + '/index.html'
+            report_html = '.lastFinished' + self.dirs_path[2:-1] + item[0] + '/index.html'
             annotations.append(
                 dict(
                     x=self.__date(item[0]),
